@@ -1,0 +1,14 @@
+CREATE TABLE clube
+(
+    id BIGSERIAL NOT NULL,
+    nome VARCHAR(200) NOT NULL,
+    cnpj VARCHAR(20) NOT NULL,
+    conta_corrente VARCHAR(10) NOT NULL,
+    agencia VARCHAR(10) NOT NULL,
+    nome_banco VARCHAR(100) NOT NULL,
+
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP 
+);
+
+ALTER TABLE clube ADD CONSTRAINT clube_pk PRIMARY KEY (id);

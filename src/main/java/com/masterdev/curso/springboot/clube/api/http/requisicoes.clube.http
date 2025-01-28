@@ -1,0 +1,41 @@
+// COM O HTTPIE -> http POST :4000/auth/login
+
+// Create Clube
+###
+POST http://localhost:8080/clubes
+Content-Type:  application/json
+
+{
+  "nome": "Botafogo",
+  "cnpj": "99.279.999/0001-01",
+  "contaCorrente": "100018-7",
+  "agencia": "9906",
+  "nomeBanco": "BG"
+}
+
+
+// Update Clube by Id
+###
+PUT http://localhost:8080/clubes/2
+Content-Type:  application/json
+
+{
+  "id": 2,
+  "nome": "REAL Madri 4",
+  "cnpj": "88.999.941/0001-01",
+  "contaCorrente": "100018-8",
+  "agencia": "7046",
+  "nomeBanco": "Banco Santander"
+}
+
+// Delete Clube by Id
+###
+DELETE http://localhost:8080/clubes/3
+
+// Get Clube by Id
+###
+GET http://localhost:8080/clubes/2
+
+// Get Clube All
+###
+GET http://localhost:8080/clubes
