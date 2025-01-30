@@ -16,14 +16,14 @@ import com.masterdev.curso.springboot.jogador.api.dto.JogadorResponseDTO;
 public class JogadorController {
     
 
-    @PostMapping
-    public JogadorResponseDTO create(@RequestBody JogadorRequestDTO request ) {
-        // converter de DTO para VO
-        ClubeRequestVO requestVO = ClubeDTOConverter.fromDTOToVO(request);
-        // chamar o facade para criar o clube no banco de dados atraves do business
-        ClubeResponseVO response = clubeFacade.create(requestVO);
-        // returna convertendo de VO para DTO
-        return ClubeDTOConverter.fromVOToDTO(response);
-    }
+    // @PostMapping
+    // public JogadorResponseDTO create(@RequestBody JogadorRequestDTO request ) {
+    //     // converter de DTO para VO
+    //     ClubeRequestVO requestVO = ClubeDTOConverter.fromDTOToVO(request);
+    //     // chamar o facade para criar o clube no banco de dados atraves do business
+    //     ClubeResponseVO response = clubeFacade.create(requestVO);
+    //     // returna convertendo de VO para DTO
+    //     return ClubeDTOConverter.fromVOToDTO(response);
+    // }
 
 }

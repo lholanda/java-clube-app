@@ -6,7 +6,7 @@ import com.masterdev.curso.springboot.clube.model.entity.Clube;
 
 public class ClubeEntityConverter {
 
-    public static Clube fromVOToEntity(ClubeRequestVO request) {
+    public static Clube fromVOToEntityNew(ClubeRequestVO request) {
         return new Clube(
                 null,
                 request.getNome(),

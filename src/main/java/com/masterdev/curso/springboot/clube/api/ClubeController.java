@@ -67,7 +67,7 @@ public class ClubeController {
     public List<ClubeResponseDTO> getAll() {
         List <ClubeResponseDTO> clubes = new ArrayList<>();
 
-        List <ClubeResponseVO>clubesVO = clubeFacade.findAll();
+        List <ClubeResponseVO> clubesVO = clubeFacade.findAll();
         
         clubesVO.forEach(clube -> {
             clubes.add(ClubeDTOConverter.fromVOToDTO(clube));

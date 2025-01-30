@@ -21,7 +21,7 @@ public class ClubeDAO {
     }
 
     public ClubeResponseVO create( ClubeRequestVO request ) {
-        Clube clube = ClubeEntityConverter.fromVOToEntity(request);
+        Clube clube = ClubeEntityConverter.fromVOToEntityNew(request);
 
         System.out.println("ClubeDAO "+clube.getCreatedAt());
 

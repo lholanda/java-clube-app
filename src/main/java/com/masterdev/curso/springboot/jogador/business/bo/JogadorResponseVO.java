@@ -1,73 +1,26 @@
-package com.masterdev.curso.springboot.jogador.model.entity;
+package com.masterdev.curso.springboot.jogador.business.bo;
 
 import java.math.BigDecimal;
-import java.sql.DataTruncation;
 import java.time.LocalDateTime;
-
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import com.masterdev.curso.springboot.jogador.type.PosicaoJogador;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EntityListeners;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
-@Entity
-@Table(name = "jogador")
-@EntityListeners(AuditingEntityListener.class) // o JPA vai preencher automaticamente os campos createdAt e updatedAt
-public class Jogador {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(columnDefinition = "serial")
+public class JogadorResponseVO {
     private Long id;
-
-    @Column(name = "nome")
     private String nome;
-
-    @Column(name = "rg")
     private String rg;
-
-    @Column(name = "cpf")
     private String cpf;
-
-    @Column(name = "nacionalidade")
     private String nacionalidade;
-
-    @Column(name = "data_nascimento")
     private LocalDateTime dataNascimento;
-
-    @Column(name = "posicao")
-    @Enumerated(EnumType.STRING)
     private PosicaoJogador posicao;
-
-    @Column(name = "peso")
     private BigDecimal peso;
-
-    @Column(name = "altura")
     private BigDecimal altura;
-
-    @Column(name = "created_at")
-    @CreatedDate // será preechido automaticamente pelo JPA, quando o registro for criado
     private LocalDateTime createdAt;
-
-    @Column(name = "updated_at")
-    @LastModifiedDate // será preechido automaticamente pelo JPA, quando o registro for atualizado
     private LocalDateTime updatedAt;
 
-    public Jogador() {
-    }
-
-    public Jogador(Long id, String nome, String rg, String cpf, String nacionalidade, 
-                   LocalDateTime dataNascimento,
-                   PosicaoJogador posicao, BigDecimal peso, BigDecimal altura) {
+    public JogadorResponseVO(Long id, String nome, String rg, String cpf, String nacionalidade,
+            LocalDateTime dataNascimento, PosicaoJogador posicao, BigDecimal peso, BigDecimal altura,
+            LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.nome = nome;
         this.rg = rg;
@@ -77,6 +30,8 @@ public class Jogador {
         this.posicao = posicao;
         this.peso = peso;
         this.altura = altura;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
     public Long getId() {
@@ -166,7 +121,5 @@ public class Jogador {
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
-
-    
 
 }
